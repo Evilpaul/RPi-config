@@ -37,6 +37,17 @@
 ##
 #sdtv_aspect=1
 
+## sdtv_disable_colourburst
+##     Disables colour burst on composite output. The picture will be
+##     monochrome, but possibly sharper
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Colour burst is enabled (Default)
+##     1        Colour burst is disabled
+##
+#sdtv_disable_colourburst=1
+
 ################################################################################
 ##  High Definition Video Settings
 ################################################################################
