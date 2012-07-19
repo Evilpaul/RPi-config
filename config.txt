@@ -77,7 +77,8 @@
 ##     Value    Description
 ##     -------------------------------------------------------------------------
 ##     0        Disabled (Default)
-##     1        Enabled (this does: hdmi_force_hotplug=1, config_hdmi_boost=4, hdmi_group=1, hdmi_mode=1, disable_overscan=0)
+##     1        Enabled (this does: hdmi_force_hotplug=1, config_hdmi_boost=4,
+##                                  hdmi_group=1, hdmi_mode=1, disable_overscan=0)
 ##
 #hdmi_safe=1
 
@@ -133,8 +134,10 @@
 ##     defines screen resolution in CEA or DMT format
 ##
 ##     H means 16:9 variant (of a normally 4:3 mode).
-##     2x means pixel doubled (i.e. higher clock rate, with each pixel repeated twice)
-##     4x means pixel quadrupled (i.e. higher clock rate, with each pixel repeated four times)
+##     2x means pixel doubled (i.e. higher clock rate, with each pixel repeated
+##                                  twice)
+##     4x means pixel quadrupled (i.e. higher clock rate, with each pixel
+##                                     repeated four times)
 ##
 ##     Value    hdmi_group=CEA                  hdmi_group=DMT
 ##     -------------------------------------------------------------------------
@@ -259,27 +262,27 @@
 ################################################################################
 
 ## overscan_left
-##     number of pixels to skip on left
+##     Number of pixels to skip on left
 ##
 #overscan_left=0
 
 ## overscan_right
-##     number of pixels to skip on right
+##     Number of pixels to skip on right
 ##
 #overscan_right=0
 
 ## overscan_top
-##     number of pixels to skip on top
+##     Number of pixels to skip on top
 ##
 #overscan_top=0
 
 ## overscan_bottom
-##     number of pixels to skip on bottom
+##     Number of pixels to skip on bottom
 ##
 #overscan_bottom=0
 
 ## disable_overscan
-##     set to 1 to disable overscan
+##     Set to 1 to disable overscan
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -293,29 +296,32 @@
 ################################################################################
 
 ## framebuffer_width
-##     console framebuffer width in pixels. Default is display width minus overscan.
+##     Console framebuffer width in pixels. Default is display width minus
+##     overscan.
 ##
 #framebuffer_width=0
 
 ## framebuffer_height
-##     console framebuffer height in pixels. Default is display height minus overscan.
+##     Console framebuffer height in pixels. Default is display height minus
+##     overscan.
 ##
 #framebuffer_height=0
 
 ## framebuffer_depth
-##     console framebuffer depth in bits per pixel.
+##     Console framebuffer depth in bits per pixel.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     8        valid, but default RGB palette makes an unreadable screen
+##     8        Valid, but default RGB palette makes an unreadable screen
 ##     16       (Default)
-##     24       looks better but has corruption issues as of 2012/06/15
-##     32       has no corruption issues but needs framebuffer_ignore_alpha=1 and shows the wrong colors as of 2012/06/15
+##     24       Looks better but has corruption issues as of 2012/06/15
+##     32       Has no corruption issues but needs framebuffer_ignore_alpha=1
+##              and shows the wrong colors as of 2012/06/15
 ##
 #framebuffer_depth=16
 
 ## framebuffer_ignore_alpha
-##     set to 1 to disable alpha channel. Helps with 32bit.
+##     Set to 1 to disable alpha channel. Helps with 32bit.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -329,7 +335,7 @@
 ################################################################################
 
 ## test_mode
-##     enable test sound/image during boot for manufacturing test.
+##     Enable test sound/image during boot for manufacturing test.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -343,7 +349,8 @@
 ################################################################################
 
 ## disable_l2cache
-##     disable arm access to GPU's L2 cache. Needs corresponding L2 disabled kernel.
+##     Disable arm access to GPU's L2 cache. Needs corresponding L2 disabled
+##     kernel.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -357,7 +364,8 @@
 ################################################################################
 
 ## disable_commandline_tags
-##     Stops start.elf from filling in ATAGS (memory from 0x100) before launching kernel
+##     Stops start.elf from filling in ATAGS (memory from 0x100) before
+##     launching kernel
 ##
 #disable_commandline_tags=0
 
@@ -372,7 +380,7 @@
 #kernel=""
 
 ## kernel_address
-##     address to load kernel.img file at
+##     Address to load kernel.img file at
 ##
 #kernel_address=0x00000000
 
@@ -396,22 +404,28 @@
 #initramfs initramf.gz 0x00800000
 
 ## device_tree_address
-##     address to load device_tree at
+##     Address to load device_tree at
 ##
 #device_tree_address=0x00000000
 
 ## init_uart_baud
-##     initial uart baud rate. Default 115200
+##     Initial uart baud rate.
+##
+##     Default 115200
 ##
 #init_uart_baud=115200
 
 ## init_uart_clock
-##     initial uart clock. Default 3000000
+##     Initial uart clock.
+##
+##     Default 3000000
 ##
 #init_uart_clock=3000000
 
 ## init_emmc_clock
-##     initial emmc clock. Default 50000000 (50mhz default. increasing this can speedup your SD-card)
+##     Initial emmc clock.
+##
+##     Default 50000000 (50mhz. increasing this can speedup your SD-card)
 ##
 #init_emmc_clock=50000000
 
@@ -439,37 +453,52 @@
 ################################################################################
 
 ## arm_freq
-##     frequency of ARM in MHz. Default 700.
+##     Frequency of ARM in MHz.
+##
+##     Default 700.
 ##
 #arm_freq=700
 
 ## gpu_freq
 ##     Sets core_freq, h264_freq, isp_freq, v3d_freq together.
 ##
+##     Default 250.
+##
 #gpu_freq=250
 
 ## core_freq
-##     frequency of GPU processor core in MHz. Default 250.
+##     Frequency of GPU processor core in MHz. It has an impact on ARM
+##     performance since it drives L2 cache.
+##
+##     Default 250.
 ##
 #core_freq=250
 
 ## h264_freq
-##     frequency of hardware video block in MHz. Default 250.
+##     Frequency of hardware video block in MHz.
+##
+##     Default 250.
 ##
 #h264_freq=250
 
 ## isp_freq
-##     frequency of image sensor pipeline block in MHz. Default 250.
+##     Frequency of image sensor pipeline block in MHz.
+##
+##     Default 250.
 ##
 #isp_freq=250
 
 ## v3d_freq
-##     frequency of 3D block in MHz. Default 250.
+##     Frequency of 3D block in MHz.
+##
+##     Default 250.
 ##
 #v3d_freq=250
 
 ## sdram_freq
-##     frequency of SDRAM in MHz. Default 400.
+##     Frequency of SDRAM in MHz.
+##
+##     Default 400.
 ##
 #sdram_freq=400
 
