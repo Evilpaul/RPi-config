@@ -370,6 +370,11 @@
 ##
 #ramfsfile=""
 
+## ramfsaddr
+##     Address to load ramfs file at
+##
+#ramfsaddr=0x00000000
+
 ## device_tree_address
 ##     address to load device_tree at
 ##
