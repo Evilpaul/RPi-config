@@ -83,7 +83,8 @@
 #hdmi_safe=1
 
 ## hdmi_force_hotplug
-##     overrides the normal selection of composite if no HDMI is detected
+##     Pretends HDMI hotplug signal is asserted so it appears a HDMI display
+##     is attached
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
