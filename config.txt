@@ -179,11 +179,6 @@
 ##
 #hdmi_mode=1
 
-## hdmi_force_hotplug
-##     Make RPi ignore hotplug signal from display and assume it is asserted.
-##
-#hdmi_force_hotplug=0
-
 ## config_hdmi_boost
 ##     configure the signal strength of the HDMI interface.
 ##
