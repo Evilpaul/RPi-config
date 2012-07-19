@@ -131,13 +131,12 @@
 #hdmi_force_edid_audio=1
 
 ## hdmi_group
-##     defines the HDMI type
-##
-##     [rgh] I think values are 0 and 1 really, and the default 0 for CEA - at least with the latest firmware as of May 25th 2012.
+##     Defines the HDMI type
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     1        CEA (Default)
+##     0        Use the preferred group reported by the edid (Default)
+##     1        CEA
 ##     2        DMT
 ##
 #hdmi_group=1
