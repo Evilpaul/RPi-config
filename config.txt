@@ -258,7 +258,7 @@
 ##     24       looks better but has corruption issues as of 2012/06/15
 ##     32       has no corruption issues but needs framebuffer_ignore_alpha=1 and shows the wrong colors as of 2012/06/15
 ##
-#framebuffer_height=16
+#framebuffer_depth=16
 
 ## framebuffer_ignore_alpha
 ##     set to 1 to disable alpha channel. Helps with 32bit.
