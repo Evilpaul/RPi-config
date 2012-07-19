@@ -119,6 +119,17 @@
 ##
 #hdmi_ignore_edid=0xa5000080
 
+## hdmi_force_edid_audio
+##     Pretends all audio formats are supported by display, allowing
+##     passthrough of DTS/AC3 even when not reported as supported.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use EDID provided values (Default)
+##     1        Pretend all audio formats are supported
+##
+#hdmi_force_edid_audio=1
+
 ## hdmi_group
 ##     defines the HDMI type
 ##
