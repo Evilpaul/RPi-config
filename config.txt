@@ -72,6 +72,17 @@
 ##
 #hdmi_force_hotplug=1
 
+## hdmi_ignore_hotplug
+##     Pretends HDMI hotplug signal is not asserted so it appears a HDMI
+##     display is not attached
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disabled (Default)
+##     1        Use composite mode even if HDMI monitor is detected
+##
+#hdmi_ignore_hotplug=1 
+
 ## hdmi_drive
 ##     chooses between HDMI and DVI modes
 ##
