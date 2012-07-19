@@ -375,6 +375,15 @@
 ##
 #ramfsaddr=0x00000000
 
+## initramfs (string address)
+##     ramfs file and address to load it at (it's like ramfsfile+ramfsaddr in
+##     one option).
+##
+##     NOTE: this option uses different syntax than all other options - you
+##           should not use "=" character here.
+##
+#initramfs initramf.gz 0x00800000
+
 ## device_tree_address
 ##     address to load device_tree at
 ##
