@@ -1,7 +1,9 @@
 ################################################################################
 ##  Raspberry Pi Configuration Settings
 ##
-##  Details taken from the eLinux wiki 2012/06/27
+##  Revision 4, 2012/07/04
+##
+##  Details taken from the eLinux wiki
 ##  For up-to-date information please refer to wiki page.
 ##
 ##  Wiki Location : http://elinux.org/RPi_config.txt
