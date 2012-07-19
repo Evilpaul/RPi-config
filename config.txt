@@ -57,7 +57,7 @@
 ##     0        Disabled (Default)
 ##     1        Use HDMI mode even if no HDMI monitor is detected
 ##
-#hdmi_force_hotplug=1 
+#hdmi_force_hotplug=1
 
 ## hdmi_drive
 ##     chooses between HDMI and DVI modes
@@ -67,7 +67,7 @@
 ##     1        Normal DVI mode (No sound)
 ##     2        Normal HDMI mode (Sound will be sent if supported and enabled)
 ##
-#hdmi_drive=2 
+#hdmi_drive=2
 
 ## hdmi_group
 ##     defines the HDMI type
