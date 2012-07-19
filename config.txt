@@ -243,6 +243,17 @@
 ##
 #config_hdmi_boost=0
 
+## hdmi_ignore_cec
+##     Pretends CEC is not supported by TV. Avoids bringing (CEC enabled) TV
+##     out of standby and channel switch when rebooting.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     1        Normal behaviour (Default)
+##     2        Pretend CEC is not supported by TV
+##
+#hdmi_ignore_cec=1
+
 ################################################################################
 ##  Overscan Video Settings
 ################################################################################
