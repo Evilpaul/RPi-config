@@ -448,7 +448,7 @@
 ################################################################################
 ##  Overclocking Settings
 ##
-##  ARM, SDRAM and GPU each have their own PLLs can can be unrelated
+##  ARM, SDRAM and GPU each have their own PLLs and can have unrelated
 ##  frequencies.
 ##
 ##  The GPU core, h264, v3d and isp share a PLL, so need to have related
@@ -456,8 +456,8 @@
 ##  PLL will be set to:
 ##    pll_freq = core_freq * 2^n, for smallest n satisfying pll_freq > 600MHz
 ##
-##  GPU core, h264, v3d and isp should all be integer divisors of PLL freq.
-##  So if core_freq=480, then pll_freq=960.
+##  GPU core, h264, v3d and isp should all be integer divisors of pll_freq.
+##  So core_freq=480 sets pll_freq=960.
 ##  That would allow a v3d_freq/h264_freq/v3d_freq of 320 with an integer
 ##  divider of 3.
 ##
