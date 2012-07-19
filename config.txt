@@ -69,6 +69,11 @@
 ##
 #hdmi_drive=2
 
+## hdmi_ignore_edid
+##     Enables the ignoring of EDID/display data
+##
+#hdmi_ignore_edid=0xa5000080
+
 ## hdmi_group
 ##     defines the HDMI type
 ##
