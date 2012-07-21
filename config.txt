@@ -447,6 +447,18 @@
 ##
 #boot_delay=0
 
+## avoid_safe_mode
+##     Adding a jumper between pins 5 & 6 of P1 enables a recovery Safe Mode.
+##     If pins 5 & 6 are used for connecting to external devices (e.g. GPIO),
+##     then this setting can be used to ensure Safe Mode is not triggered.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Respect Safe Mode input (Default)
+##     1        Ignore Safe Mode input
+##
+#avoid_safe_mode=1
+
 ################################################################################
 ##  Overclocking Settings
 ##
