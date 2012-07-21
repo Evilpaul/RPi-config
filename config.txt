@@ -1,7 +1,7 @@
 ################################################################################
 ##  Raspberry Pi Configuration Settings
 ##
-##  Revision 5, 2012/07/19
+##  Revision 6, 2012/07/21
 ##
 ##  Details taken from the eLinux wiki
 ##  For up-to-date information please refer to wiki page.
