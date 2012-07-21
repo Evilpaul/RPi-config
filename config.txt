@@ -149,6 +149,8 @@
 ##                                  twice)
 ##     4x means pixel quadrupled (i.e. higher clock rate, with each pixel
 ##                                     repeated four times)
+##     reduced blanking means fewer bytes are used for blanking within the data
+##                      stream (i.e. lower clock rate, with fewer wasted bytes)
 ##
 ##     Value    hdmi_group=CEA                  hdmi_group=DMT
 ##     -------------------------------------------------------------------------
