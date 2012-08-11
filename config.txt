@@ -22,7 +22,8 @@
 ##     0        Normal NTSC (Default)
 ##     1        Japanese version of NTSC - no pedestal
 ##     2        Normal PAL
-##     3        Brazilian version of PAL - 525/60 rather than 625/50, different subcarrier
+##     3        Brazilian version of PAL - 525/60 rather than 625/50, different
+##              subcarrier
 ##
 #sdtv_mode=0
 
@@ -78,7 +79,8 @@
 ##     -------------------------------------------------------------------------
 ##     0        Disabled (Default)
 ##     1        Enabled (this does: hdmi_force_hotplug=1, config_hdmi_boost=4,
-##                                  hdmi_group=1, hdmi_mode=1, disable_overscan=0)
+##                                  hdmi_group=1, hdmi_mode=1,
+##                                  disable_overscan=0)
 ##
 #hdmi_safe=1
 
@@ -570,7 +572,8 @@
 #over_voltage=0
 
 ## over_voltage_sdram
-##     Sets over_voltage_sdram_c, over_voltage_sdram_i, over_voltage_sdram_p together
+##     Sets over_voltage_sdram_c, over_voltage_sdram_i, over_voltage_sdram_p
+##     together
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
