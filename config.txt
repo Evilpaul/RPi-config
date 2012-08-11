@@ -8,6 +8,13 @@
 ##
 ##  Wiki Location : http://elinux.org/RPi_config.txt
 ##
+##
+##  Description:
+##    Details of each setting are described with each section that begins with
+##    a double hashed comment ('##')
+##    It is up to the user to remove the single hashed comment ('#') from each
+##    option they want to enable, and to set the specific value of that option.
+##
 ################################################################################
 
 ################################################################################
