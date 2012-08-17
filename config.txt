@@ -291,8 +291,8 @@
 #hdmi_ignore_cec_init=1
 
 ## hdmi_ignore_cec
-##     Pretends CEC is not supported by TV. Avoids bringing (CEC enabled) TV
-##     out of standby and channel switch when rebooting.
+##     Pretends CEC is not supported at all by TV.
+##     No CEC functions will be supported.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
