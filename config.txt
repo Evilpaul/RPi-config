@@ -279,6 +279,17 @@
 ##
 #config_hdmi_boost=0
 
+## hdmi_ignore_cec_init
+##     Doesn't sent initial active source message.  Avoids bringing
+##     (CEC enabled) TV out of standby and channel switch when rebooting.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Normal behaviour (Default)
+##     1        Doesn't sent initial active source message
+##
+#hdmi_ignore_cec_init=1
+
 ## hdmi_ignore_cec
 ##     Pretends CEC is not supported by TV. Avoids bringing (CEC enabled) TV
 ##     out of standby and channel switch when rebooting.
