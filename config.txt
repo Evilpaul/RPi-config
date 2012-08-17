@@ -296,8 +296,8 @@
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     1        Normal behaviour (Default)
-##     2        Pretend CEC is not supported by TV
+##     0        Normal behaviour (Default)
+##     1        Pretend CEC is not supported by TV
 ##
 #hdmi_ignore_cec=1
 
