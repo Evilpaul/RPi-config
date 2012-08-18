@@ -558,6 +558,17 @@
 ##
 #sdram_freq=400
 
+## avoid_pwm_pll
+##     Unlink core_freq from the rest of the gpu. Analog audio should still
+##     work, but from a fractional divider, so lower quality.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Linked core_freq (Default)
+##     1        Unlinked core_freq
+##
+#avoid_pwm_pll=1
+
 ################################################################################
 ##  Voltage Settings
 ##
