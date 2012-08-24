@@ -375,6 +375,24 @@
 #framebuffer_ignore_alpha=0
 
 ################################################################################
+##  Licensed Codecs
+##
+##  Hardware decoding of additional codecs can be enabled by purchasing a
+##  license that is locked to the CPU serial number of your Raspberry Pi.
+##
+################################################################################
+
+## decode_MPG2
+##     License key to allow hardware MPEG-2 decoding.
+##
+#decode_MPG2=0x12345678
+
+## decode_WVC1
+##     License key to allow hardware VC-1 decoding.
+##
+#decode_WVC1=0x12345678
+
+################################################################################
 ##  Test Settings
 ################################################################################
 
