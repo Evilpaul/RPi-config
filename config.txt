@@ -375,6 +375,22 @@
 #framebuffer_ignore_alpha=0
 
 ################################################################################
+##  General Video Settings
+################################################################################
+
+## display_rotate
+##     Rotate the display clockwise
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        0 degrees (Default)
+##     1        90 degrees
+##     2        180 degrees
+##     3        270 degrees
+##
+#display_rotate=0
+
+################################################################################
 ##  Licensed Codecs
 ##
 ##  Hardware decoding of additional codecs can be enabled by purchasing a
