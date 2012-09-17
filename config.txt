@@ -511,6 +511,8 @@
 ##     Wait for a given number of seconds in start.elf before loading
 ##     kernel.img.
 ##
+##     Default 1
+##
 #boot_delay=0
 
 ## avoid_safe_mode
