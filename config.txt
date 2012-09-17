@@ -511,9 +511,21 @@
 ##     Wait for a given number of seconds in start.elf before loading
 ##     kernel.img.
 ##
+##     delay = (1000 * boot_delay) + boot_delay_ms
+##
 ##     Default 1
 ##
 #boot_delay=0
+
+## boot_delay_ms
+##     Wait for a given number of milliseconds in start.elf before loading
+##     kernel.img.
+##
+##     delay = (1000 * boot_delay) + boot_delay_ms
+##
+##     Default 0
+##
+#boot_delay_ms=0
 
 ## avoid_safe_mode
 ##     Adding a jumper between pins 5 & 6 of P1 enables a recovery Safe Mode.
