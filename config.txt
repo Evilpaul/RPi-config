@@ -547,13 +547,12 @@
 ##
 ##  The GPU core, h264, v3d and isp share a PLL, so need to have related
 ##  frequencies.
-##  PLL will be set to:
-##    pll_freq = core_freq * 2^n, for smallest n satisfying pll_freq > 600MHz
+##  pll_freq = floor(2400 / (2 * core_freq)) * (2 * core_freq)
+##  gpu_freq = pll_freq / [even number]
 ##
-##  GPU core, h264, v3d and isp should all be integer divisors of pll_freq.
-##  So core_freq=480 sets pll_freq=960.
-##  That would allow a v3d_freq/h264_freq/v3d_freq of 320 with an integer
-##  divider of 3.
+##  The effective gpu_freq is automatically rounded to nearest even integer, so
+##  asking for core_freq = 500 and gpu_freq = 300 will result in divisor of
+##  2000/300 = 6.666 => 6 and so 333.33MHz.
 ##
 ################################################################################
 
