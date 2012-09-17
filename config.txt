@@ -496,7 +496,7 @@
 ## init_uart_clock
 ##     Initial uart clock.
 ##
-##     Default 3000000
+##     Default 3000000 (3MHz)
 ##
 #init_uart_clock=3000000
 
