@@ -442,7 +442,7 @@
 ################################################################################
 
 ## disable_commandline_tags
-##     Stops start.elf from filling in ATAGS (memory from 0x100) before
+##     Stop start.elf from filling in ATAGS (memory from 0x100) before
 ##     launching kernel
 ##
 #disable_commandline_tags=0
@@ -508,7 +508,8 @@
 #init_emmc_clock=50000000
 
 ## boot_delay
-##     Waits for given number of seconds in start.elf before loading kernel.img.
+##     Wait for a given number of seconds in start.elf before loading
+##     kernel.img.
 ##
 #boot_delay=0
 
