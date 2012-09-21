@@ -109,6 +109,17 @@
 ##
 #hdmi_ignore_edid=0xa5000080
 
+## hdmi_edid_file
+##     Read the EDID data from the edid.dat file instead of from the attached
+##     device
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Read EDID data from attached device (Default)
+##     1        Read EDID data from edid.txt file
+##
+#hdmi_edid_file=1
+
 ## hdmi_force_edid_audio
 ##     Pretends all audio formats are supported by display, allowing
 ##     passthrough of DTS/AC3 even when not reported as supported.
