@@ -659,6 +659,12 @@
 ##
 ################################################################################
 
+## current_limit_override
+##     Disables SMPS current limit protection. Can help if you are currently
+##     hitting a reboot failure when overclocking too high.
+##
+#current_limit_override=0x5A000020
+
 ## over_voltage
 ##     ARM/GPU core voltage adjust.
 ##
