@@ -131,16 +131,15 @@
 ##
 #hdmi_force_edid_audio=1
 
-## edid_format_smart_match
-##     Allow fuzzy matching of modes described in edid. Picks the standard mode
-##     with matching resolution and closest framerate even if blanking is wrong.
+## avoid_edid_fuzzy_match
+##     Avoid fuzzy matching of modes described in edid.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     0        Normal behaviour (Default)
-##     1        Use fuzzy matching
+##     0        Use fuzzy matching (Default)
+##     1        Avoid fuzzy matching
 ##
-#edid_format_smart_match=1
+#avoid_edid_fuzzy_match=1
 
 ## hdmi_group
 ##     Defines the HDMI type
