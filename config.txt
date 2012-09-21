@@ -556,6 +556,16 @@
 ##  asking for core_freq = 500 and gpu_freq = 300 will result in divisor of
 ##  2000/300 = 6.666 => 6 and so 333.33MHz.
 ##
+##
+##  Standard Profiles:
+##                  arm_freq    core_freq    sdram_freq    over_voltage
+##     -------------------------------------------------------------------------
+##     None         700         250          400           0
+##     Modest       800         300          400           0
+##     Medium       900         333          450           2
+##     High         950         450          450           6
+##     Turbo        1000        500          500           6
+##
 ################################################################################
 
 ## force_turbo
