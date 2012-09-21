@@ -554,7 +554,7 @@
 ##  asking for core_freq = 500 and gpu_freq = 300 will result in divisor of
 ##  2000/300 = 6.666 => 6 and so 333.33MHz.
 ##
-##  Overclock settings will be disabled at runtime when the SoC reaches 85°C
+##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
 ##
 ################################################################################
 
@@ -672,7 +672,7 @@
 ##  will set a permanent bit within the SOC and your warranty is void. So If
 ##  you care about the warranty do not adjust voltage.
 ##
-##  Over voltage settings will be disabled at runtime when the SoC reaches 85°C
+##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
 ##
 ################################################################################
 
