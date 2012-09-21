@@ -58,25 +58,6 @@
 
 ################################################################################
 ##  High Definition Video Settings
-##
-##  Your HDMI monitor may support only a limited set of formats. To find out
-##  which formats are supported, use the following method.
-##  1) Set the output format to VGA 60Hz (hdmi_group=1 hdmi_mode=1) and boot up
-##     the Raspberry Pi
-##  2) Enter the following command to give a list of CEA supported modes
-##         /opt/vc/bin/tvservice -m CEA
-##  3) Enter the following command to give a list of DMT supported modes
-##         /opt/vc/bin/tvservice -m DMT
-##  4) Enter the following command to show your current state
-##         /opt/vc/bin/tvservice -s
-##  5) Enter the following commands to dump more detailed information from your
-##     monitor
-##         /opt/vc/bin/tvservice -d edid.dat
-##         /opt/vc/bin/edidparser edid.dat
-##
-##     The edid.dat should also be provided when troubleshooting problems with
-##     the default HDMI mode
-##
 ################################################################################
 
 ## hdmi_safe
