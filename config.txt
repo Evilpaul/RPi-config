@@ -15,6 +15,13 @@
 ##    It is up to the user to remove the single hashed comment ('#') from each
 ##    option they want to enable, and to set the specific value of that option.
 ##
+##  WARNING: Setting the following combination of parameters will set a
+##  permanent bit within the SOC and your warranty is void.
+##    over_voltage>0, and at least one of the following:
+##      force_turbo=1
+##      current_limit_override=0x5A000020
+##      temp_limit>85
+##
 ################################################################################
 
 ################################################################################
@@ -660,10 +667,6 @@
 
 ################################################################################
 ##  Voltage Settings
-##
-##  WARNING: Setting any of the parameters which over volt your Raspberry Pi
-##  will set a permanent bit within the SOC and your warranty is void. So If
-##  you care about the warranty do not adjust voltage.
 ##
 ##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
 ##
