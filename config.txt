@@ -22,6 +22,8 @@
 ##      current_limit_override=0x5A000020
 ##      temp_limit>85
 ##
+##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
+##
 ################################################################################
 
 ################################################################################
@@ -554,8 +556,6 @@
 ##  asking for core_freq = 500 and gpu_freq = 300 will result in divisor of
 ##  2000/300 = 6.666 => 6 and so 333.33MHz.
 ##
-##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
-##
 ################################################################################
 
 ## force_turbo
@@ -667,9 +667,6 @@
 
 ################################################################################
 ##  Voltage Settings
-##
-##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
-##
 ################################################################################
 
 ## current_limit_override
