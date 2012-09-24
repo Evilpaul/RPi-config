@@ -583,6 +583,15 @@
 ##
 #force_turbo=0
 
+## initial_turbo
+##     Enables turbo mode from boot for the given value in seconds (up to 60)
+##     or until cpufreq sets a frequency. Can help with sdcard corruption if
+##     overclocked.
+##
+##     Default 0
+##
+#initial_turbo=0
+
 ## temp_limit
 ##     Overheat protection. Sets clocks and voltages to default when the SoC
 ##     reaches this Celsius value.
