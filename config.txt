@@ -503,11 +503,11 @@
 #init_uart_clock=3000000
 
 ## init_emmc_clock
-##     Initial emmc clock.
+##     Initial emmc clock, increasing this can speedup your SD-card.
 ##
-##     Default 50000000 (50mhz. increasing this can speedup your SD-card)
+##     Default 100000000 (100mhz)
 ##
-#init_emmc_clock=50000000
+#init_emmc_clock=100000000
 
 ## boot_delay
 ##     Wait for a given number of seconds in start.elf before loading
