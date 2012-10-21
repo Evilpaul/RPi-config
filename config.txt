@@ -541,6 +541,23 @@
 ##
 #avoid_safe_mode=1
 
+## gpu_mem
+##     GPU memory allocation for all board revisions.
+##
+#gpu_mem=128
+
+## gpu_mem_256
+##     GPU memory allocation for 256MB board revision.
+##     This option overrides gpu_mem.
+##
+#gpu_mem_256=128
+
+## gpu_mem_512
+##     GPU memory allocation for 512MB board revision.
+##     This option overrides gpu_mem.
+##
+#gpu_mem_512=128
+
 ################################################################################
 ##  Overclocking Settings
 ##
