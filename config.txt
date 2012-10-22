@@ -544,6 +544,8 @@
 ## gpu_mem
 ##     GPU memory allocation for all board revisions.
 ##
+##     Default 64
+##
 #gpu_mem=128
 
 ## gpu_mem_256
