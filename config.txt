@@ -439,6 +439,25 @@
 ##
 #disable_l2cache=0
 
+## gpu_mem
+##     GPU memory allocation in MB for all board revisions.
+##
+##     Default 64
+##
+#gpu_mem=128
+
+## gpu_mem_256
+##     GPU memory allocation in MB for 256MB board revision.
+##     This option overrides gpu_mem.
+##
+#gpu_mem_256=128
+
+## gpu_mem_512
+##     GPU memory allocation in MB for 512MB board revision.
+##     This option overrides gpu_mem.
+##
+#gpu_mem_512=128
+
 ################################################################################
 ##  Boot Option Settings
 ################################################################################
@@ -540,25 +559,6 @@
 ##     1        Ignore Safe Mode input
 ##
 #avoid_safe_mode=1
-
-## gpu_mem
-##     GPU memory allocation in MB for all board revisions.
-##
-##     Default 64
-##
-#gpu_mem=128
-
-## gpu_mem_256
-##     GPU memory allocation in MB for 256MB board revision.
-##     This option overrides gpu_mem.
-##
-#gpu_mem_256=128
-
-## gpu_mem_512
-##     GPU memory allocation in MB for 512MB board revision.
-##     This option overrides gpu_mem.
-##
-#gpu_mem_512=128
 
 ################################################################################
 ##  Overclocking Settings
