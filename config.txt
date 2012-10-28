@@ -379,7 +379,9 @@
 ################################################################################
 
 ## display_rotate
-##     Rotate the display clockwise
+##     Rotate the display clockwise or flip the display.
+##     The 90 and 270 degrees rotation options require additional memory on GPU,
+##     so won't work with the 16M GPU split.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -387,6 +389,8 @@
 ##     1        90 degrees
 ##     2        180 degrees
 ##     3        270 degrees
+##     0x10000  Horizontal flip
+##     0x20000  Vertical flip
 ##
 #display_rotate=0
 
