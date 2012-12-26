@@ -1,7 +1,7 @@
 ################################################################################
-##  Raspberry Pi Configuration Settings
+##  Raspberry Pi Configuration Settings for PiBang Linux
 ##
-##  Revision 14, 2012/10/22
+##  Revision 1, 2012/12/26
 ##
 ##  Details taken from the eLinux wiki
 ##  For up-to-date information please refer to wiki page.
@@ -629,7 +629,7 @@
 ##
 ##     Default 700.
 ##
-#arm_freq=700
+arm_freq=800
 
 ## arm_freq_min
 ##     Minimum frequency of ARM in MHz (used for dynamic clocking).
@@ -643,7 +643,7 @@
 ##
 ##     Default 250.
 ##
-#gpu_freq=250
+gpu_freq=250
 
 ## core_freq
 ##     Frequency of GPU processor core in MHz. It has an impact on ARM
@@ -687,7 +687,7 @@
 ##
 ##     Default 400.
 ##
-#sdram_freq=400
+sdram_freq=400
 
 ## sdram_freq_min
 ##     Minimum frequency of SDRAM in MHz (used for dynamic clocking).
@@ -748,7 +748,7 @@
 ##     7        1.375 V (requires force_turbo=1)
 ##     8        1.4   V (requires force_turbo=1)
 ##
-#over_voltage=0
+over_voltage=0
 
 ## over_voltage_min
 ##     Minimum ARM/GPU core voltage adjust (used for dynamic clocking).
