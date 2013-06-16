@@ -15,13 +15,6 @@
 ##    It is up to the user to remove the single hashed comment ('#') from each
 ##    option they want to enable, and to set the specific value of that option.
 ##
-##  WARNING: Setting the following combination of parameters will set a
-##  permanent bit within the SOC and your warranty is void.
-##    over_voltage>0, and at least one of the following:
-##      force_turbo=1
-##      current_limit_override=0x5A000020
-##      temp_limit>85
-##
 ##  Overclock settings will be disabled at runtime if the SoC reaches temp_limit
 ##
 ################################################################################
@@ -594,6 +587,7 @@
 ## force_turbo
 ##     Control the kernel "ondemand" governor. It has no effect if no overclock
 ##     settings are specified.
+##     May set warrany bit.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -716,11 +710,13 @@
 ## current_limit_override
 ##     Disables SMPS current limit protection. Can help if you are currently
 ##     hitting a reboot failure when overclocking too high.
+##     May set warrany bit.
 ##
 #current_limit_override=0x5A000020
 
 ## over_voltage
 ##     ARM/GPU core voltage adjust.
+##     May set warrany bit.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -747,8 +743,8 @@
 ##     4        1.3   V
 ##     5        1.325 V
 ##     6        1.35  V
-##     7        1.375 V (requires force_turbo=1)
-##     8        1.4   V (requires force_turbo=1)
+##     7        1.375 V (requires force_turbo=1 or current_limit_override)
+##     8        1.4   V (requires force_turbo=1 or current_limit_override)
 ##
 #over_voltage=0
 
