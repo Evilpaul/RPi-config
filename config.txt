@@ -534,6 +534,16 @@
 ##
 #kernel_address=0x00000000
 
+## kernel_old
+##     Support loading old kernels
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disabled (Default)
+##     1        Load kernel at address 0x00000000
+##
+#kernel_old=1
+
 ## ramfsfile (string)
 ##     ramfs file to load
 ##
