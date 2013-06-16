@@ -133,6 +133,17 @@
 ##
 #hdmi_force_edid_audio=1
 
+## hdmi_force_edid_3d
+##     Pretends all CEA modes support 3D even when edid doesn't indicate
+##     support for them.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use EDID provided values (Default)
+##     1        Pretend 3D mode is supported
+##
+#hdmi_force_edid_3d=1
+
 ## avoid_edid_fuzzy_match
 ##     Avoid fuzzy matching of modes described in edid.
 ##
