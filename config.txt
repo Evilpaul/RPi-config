@@ -466,6 +466,9 @@
 ##
 ##  CMA enables dynamic management of the ARM and GPU memory split at runtime.
 ##
+##  The following options need to be in cmdline.txt for CMA to work:
+##    coherent_pool=6M smsc95xx.turbo_mode=N
+##
 ################################################################################
 
 ## cma_lwm
