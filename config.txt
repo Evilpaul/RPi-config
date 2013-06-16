@@ -697,8 +697,10 @@
 #sdram_freq_min=400
 
 ## avoid_pwm_pll
-##     Unlink core_freq from the rest of the gpu. Analog audio should still
-##     work, but from a fractional divider, so lower quality.
+##     Don't dedicate a pll to PWM audio. This will reduce analogue audio
+##     quality slightly. The spare PLL allows the core_freq to be set
+##     independently from the rest of the gpu allowing more control over
+##     overclocking.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
