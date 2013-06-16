@@ -6,7 +6,7 @@
 ##  Details taken from the eLinux wiki
 ##  For up-to-date information please refer to wiki page.
 ##
-##  Wiki Location : http://elinux.org/RPi_config.txt
+##  Wiki Location : http://elinux.org/RPiconfig
 ##
 ##
 ##  Description:
