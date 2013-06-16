@@ -462,6 +462,25 @@
 #disable_pvt=1
 
 ################################################################################
+##  CMA - Dynamic Memory Split
+##
+##  CMA enables dynamic management of the ARM and GPU memory split at runtime.
+##
+################################################################################
+
+## cma_lwm
+##     When GPU has less than cma_lwm (low water mark) memory available it
+##     will request some from ARM.
+##
+#cma_lwm=16
+
+## cma_hwm
+##     When GPU has more than cma_hwm (high water mark) memory available it
+##     will release some to ARM.
+##
+#cma_hwm=32
+
+################################################################################
 ##  Boot Option Settings
 ################################################################################
 
