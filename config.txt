@@ -455,6 +455,12 @@
 ##
 #gpu_mem_512=128
 
+## disable_pvt
+##     Disable adjusting the refresh rate of RAM every 500ms
+##     (measuring RAM temparature).
+##
+#disable_pvt=1
+
 ################################################################################
 ##  Boot Option Settings
 ################################################################################
