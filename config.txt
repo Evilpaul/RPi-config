@@ -154,6 +154,21 @@
 ##
 #avoid_edid_fuzzy_match=1
 
+## hdmi_pixel_encoding
+##     Force the pixel encoding mode.
+##     By default it will use the mode requested from edid so shouldn't
+##     need changing.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use EDID provided values (Default)
+##     1        RGB limited   (16-235)
+##     2        RGB full      ( 0-255)
+##     3        YCbCr limited (16-235)
+##     4        YCbCr limited ( 0-255)
+##
+#hdmi_pixel_encoding=1
+
 ## hdmi_group
 ##     Defines the HDMI type
 ##
