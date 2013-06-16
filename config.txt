@@ -76,7 +76,7 @@
 ##     -------------------------------------------------------------------------
 ##     0        Disabled (Default)
 ##     1        Enabled (this does: hdmi_force_hotplug=1, config_hdmi_boost=4,
-##                                  hdmi_group=1, hdmi_mode=1,
+##                                  hdmi_group=2, hdmi_mode=4,
 ##                                  disable_overscan=0)
 ##
 #hdmi_safe=1
