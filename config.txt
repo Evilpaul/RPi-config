@@ -122,6 +122,17 @@
 ##
 #hdmi_edid_file=1
 
+## hdmi_ignore_edid_audio
+##     Pretends all audio formats are unsupported by display. This means ALSA
+##     will default to analogue.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use EDID provided values (Default)
+##     1        Pretend all audio formats are unsupported
+##
+#hdmi_ignore_edid_audio=1
+
 ## hdmi_force_edid_audio
 ##     Pretends all audio formats are supported by display, allowing
 ##     passthrough of DTS/AC3 even when not reported as supported.
