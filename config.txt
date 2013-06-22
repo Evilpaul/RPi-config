@@ -647,6 +647,16 @@
 ##
 #avoid_safe_mode=1
 
+## disable_splash
+##     Avoids the rainbow splash screen on boot.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Splash screen enabled (Default)
+##     1        Splash screen disabled
+##
+#disable_splash=1
+
 ################################################################################
 ##  Overclocking Settings
 ##
