@@ -68,9 +68,12 @@
 ##     Value    Description
 ##     -------------------------------------------------------------------------
 ##     0        Disabled (Default)
-##     1        Enabled (this does: hdmi_force_hotplug=1, config_hdmi_boost=4,
-##                                  hdmi_group=2, hdmi_mode=4,
-##                                  disable_overscan=0)
+##     1        Enabled (this does: hdmi_force_hotplug=1,
+##                                  hdmi_ignore_edid=0xa5000080,
+##                                  config_hdmi_boost=4, hdmi_group=2,
+##                                  hdmi_mode=4, disable_overscan=0,
+##                                  overscan_left=24, overscan_right=24,
+##                                  overscan_top=24, overscan_bottom=24)
 ##
 #hdmi_safe=1
 
