@@ -97,7 +97,7 @@
 ##     0        Disabled (Default)
 ##     1        Use composite mode even if HDMI monitor is detected
 ##
-#hdmi_ignore_hotplug=1 
+#hdmi_ignore_hotplug=1
 
 ## hdmi_drive
 ##     chooses between HDMI and DVI modes
@@ -1016,3 +1016,116 @@
 ##     8        1.4   V
 ##
 #over_voltage_sdram_p=0
+
+################################################################################
+##  USB Power
+################################################################################
+
+## max_usb_current
+##     When set to 1, change the output current limit (for all 4 USB
+##     ports combined) from 600mA to double that, 1200mA.
+##
+##     Default 0.
+##
+#max_usb_current=0
+
+################################################################################
+##  Base Device Tree Parameters
+################################################################################
+
+## audio
+##     Enable the onboard ALSA audio
+##
+##     Default off.
+##
+#dtparam=audio=off
+
+## i2c_arm
+##     Enable the ARM's i2c interface
+##
+##     Default off.
+##
+#dtparam=i2c_arm=off
+
+## i2c_vc
+##     Enable the i2c interface
+##
+##     Usually reserved for the VideoCore processor
+##
+##     Default off.
+##
+#dtparam=i2c_vc=off
+
+## i2c_arm_baudrate
+##     Set the baudrate of the ARM's i2c interface
+##
+##     Default 100000.
+##
+#dtparam=i2c_arm_baudrate=100000
+
+## i2c_vc_baudrate
+##     Set the baudrate of the VideoCore i2c interface
+##
+##     Default 100000.
+##
+#dtparam=i2c_vc_baudrate=100000
+
+## i2s
+##     Set to "on" to enable the i2s interface
+##
+##     Default off.
+##
+#dtparam=i2s=off
+
+## spi
+##     Set to "on" to enable the spi interfaces
+##
+##     Default off.
+##
+#dtparam=spi=off
+
+## random
+##     Set to "on" to enable the hardware random
+##
+##     Default off.
+##
+#dtparam=random=off
+
+## uart0
+##     Set to "off" to disable uart0
+##
+##     Default on.
+##
+#dtparam=uart0=on
+
+## watchdog
+##     Set to "on" to enable the hardware watchdog
+##
+##     Default off.
+##
+#dtparam=watchdog=off
+
+## act_led_trigger
+##     Choose which activity the LED tracks.
+##
+##     Use "heartbeat" for a nice load indicator.
+##
+##     Default mmc.
+##
+#dtparam=act_led_trigger=mmc
+
+## act_led_activelow
+##     Set to "on" to invert the sense of the LED
+##
+##     Default off.
+##
+#dtparam=act_led_activelow=off
+
+## act_led_gpio
+##     Set which GPIO to use for the activity LED
+##
+##     In case you want to connect it to an external device
+##
+##     Default 16 on a non-Plus board, 47 on a Plus or Pi 2.
+##
+#dtparam=act_led_gpio=47
