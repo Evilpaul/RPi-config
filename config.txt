@@ -1148,3 +1148,34 @@
 ##     Default 16 on a non-Plus board, 47 on a Plus or Pi 2.
 ##
 #dtparam=act_led_gpio=47
+
+## pwr_led_trigger
+##     Choose which activity the LED tracks.
+##
+##     Use "heartbeat" for a nice load indicator.
+##
+##     Not available on Model A/B boards.
+##
+##     Default mmc.
+##
+#dtparam=pwr_led_trigger=mmc
+
+## pwr_led_activelow
+##     Set to "on" to invert the sense of the LED
+##
+##     Not available on Model A/B boards.
+##
+##     Default off.
+##
+#dtparam=pwr_led_activelow=off
+
+## pwr_led_gpio
+##     Set which GPIO to use for the PWR LED
+##
+##     In case you want to connect it to an external device
+##
+##     Not available on Model A/B boards.
+##
+##     Default 35.
+##
+#dtparam=pwr_led_gpio=35
