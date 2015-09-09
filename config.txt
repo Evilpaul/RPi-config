@@ -1042,6 +1042,8 @@
 ##     When set to 1, change the output current limit (for all 4 USB
 ##     ports combined) from 600mA to double that, 1200mA.
 ##
+##     This option is not available for Model A/B boards.
+##
 ##     Default 0.
 ##
 #max_usb_current=0
