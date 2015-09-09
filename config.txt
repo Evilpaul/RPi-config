@@ -461,6 +461,9 @@
 ## start_x
 ##     Set to "1" to enable the camera module.
 ##
+##     Enabling the camera requires gpu_mem option to be specified with a value
+##     of at least 128.
+##
 ##     Default 0
 ##
 #start_x=0
