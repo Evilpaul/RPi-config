@@ -458,6 +458,13 @@
 ##  Camera Settings
 ################################################################################
 
+## start_x
+##     Set to "1" to enable the camera module.
+##
+##     Default 0
+##
+#start_x=0
+
 ## disable_camera_led
 ##     Turn off the red camera led when recording video or taking a still
 ##     picture.
@@ -544,25 +551,6 @@
 ##     will release some to ARM.
 ##
 #cma_hwm=32
-
-################################################################################
-##  Camera
-################################################################################
-
-## start_x
-##     Set to "1" to enable the camera module.
-##
-##     Default 0
-##
-#start_x=0
-
-## disable_camera_led
-##     Set to "1" to disable the red camera LED when recording video
-##     or taking a still picture.
-##
-##     Default 0
-##
-#disable_camera_led=0
 
 ################################################################################
 ##  Boot Option Settings
