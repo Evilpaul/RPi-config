@@ -519,13 +519,19 @@
 ##     GPU memory allocation in MB for 256MB board revision.
 ##     This option overrides gpu_mem.
 ##
-#gpu_mem_256=128
+#gpu_mem_256=192
 
 ## gpu_mem_512
 ##     GPU memory allocation in MB for 512MB board revision.
 ##     This option overrides gpu_mem.
 ##
-#gpu_mem_512=128
+#gpu_mem_512=448
+
+## gpu_mem_1024
+##     GPU memory allocation in MB for 1024MB board revision.
+##     This option overrides gpu_mem.
+##
+#gpu_mem_1024=944
 
 ## disable_pvt
 ##     Disable adjusting the refresh rate of RAM every 500ms
