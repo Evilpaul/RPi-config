@@ -3,10 +3,11 @@
 ##
 ##  Revision 16, 2013/06/22
 ##
-##  Details taken from the eLinux wiki
-##  For up-to-date information please refer to wiki page.
+##  Details taken from the eLinux wiki and official Raspberry Pi documentation.
+##  For up-to-date information please refer to links below.
 ##
-##  Wiki Location : http://elinux.org/RPiconfig
+##  https://elinux.org/RPiconfig
+##  https://www.raspberrypi.org/documentation/configuration/config-txt/
 ##
 ##
 ##  Description:
@@ -20,7 +21,7 @@
 ################################################################################
 
 ################################################################################
-##  Standard Definition Video Settings
+##  Composite Video Mode Options
 ################################################################################
 
 ## sdtv_mode
@@ -59,7 +60,7 @@
 #sdtv_disable_colourburst=1
 
 ################################################################################
-##  High Definition Video Settings
+##  HDMI mode options
 ################################################################################
 
 ## hdmi_safe
@@ -77,38 +78,6 @@
 ##
 #hdmi_safe=1
 
-## hdmi_force_hotplug
-##     Pretends HDMI hotplug signal is asserted so it appears a HDMI display
-##     is attached
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Disabled (Default)
-##     1        Use HDMI mode even if no HDMI monitor is detected
-##
-#hdmi_force_hotplug=1
-
-## hdmi_ignore_hotplug
-##     Pretends HDMI hotplug signal is not asserted so it appears a HDMI
-##     display is not attached
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Disabled (Default)
-##     1        Use composite mode even if HDMI monitor is detected
-##
-#hdmi_ignore_hotplug=1
-
-## hdmi_drive
-##     chooses between HDMI and DVI modes
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     1        Normal DVI mode (No sound)
-##     2        Normal HDMI mode (Sound will be sent if supported and enabled)
-##
-#hdmi_drive=2
-
 ## hdmi_ignore_edid
 ##     Enables the ignoring of EDID/display data
 ##
@@ -125,17 +94,6 @@
 ##
 #hdmi_edid_file=1
 
-## hdmi_ignore_edid_audio
-##     Pretends all audio formats are unsupported by display. This means ALSA
-##     will default to analogue.
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Use EDID provided values (Default)
-##     1        Pretend all audio formats are unsupported
-##
-#hdmi_ignore_edid_audio=1
-
 ## hdmi_force_edid_audio
 ##     Pretends all audio formats are supported by display, allowing
 ##     passthrough of DTS/AC3 even when not reported as supported.
@@ -146,6 +104,17 @@
 ##     1        Pretend all audio formats are supported
 ##
 #hdmi_force_edid_audio=1
+
+## hdmi_ignore_edid_audio
+##     Pretends all audio formats are unsupported by display. This means ALSA
+##     will default to analogue.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use EDID provided values (Default)
+##     1        Pretend all audio formats are unsupported
+##
+#hdmi_ignore_edid_audio=1
 
 ## hdmi_force_edid_3d
 ##     Pretends all CEA modes support 3D even when edid doesn't indicate
@@ -168,6 +137,34 @@
 ##
 #avoid_edid_fuzzy_match=1
 
+## hdmi_ignore_cec_init
+##     Doesn't sent initial active source message.  Avoids bringing
+##     (CEC enabled) TV out of standby and channel switch when rebooting.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Normal behaviour (Default)
+##     1        Doesn't sent initial active source message
+##
+#hdmi_ignore_cec_init=1
+
+## hdmi_ignore_cec
+##     Pretends CEC is not supported at all by TV.
+##     No CEC functions will be supported.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Normal behaviour (Default)
+##     1        Pretend CEC is not supported by TV
+##
+#hdmi_ignore_cec=1
+
+## cec_osd_name
+##     The cec_osd_name command sets the initial CEC name of the device.
+##     The default is Raspberry Pi.
+##
+#cec_osd_name=raspberry
+
 ## hdmi_pixel_encoding
 ##     Force the pixel encoding mode.
 ##     By default it will use the mode requested from edid so shouldn't
@@ -175,13 +172,56 @@
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     0        Use EDID provided values (Default)
+##     0        default       (RGB limited for CEA, RGB full for DMT)
 ##     1        RGB limited   (16-235)
 ##     2        RGB full      ( 0-255)
 ##     3        YCbCr limited (16-235)
-##     4        YCbCr limited ( 0-255)
+##     4        YCbCr full    ( 0-255)
 ##
 #hdmi_pixel_encoding=1
+
+## hdmi_blanking
+##     The hdmi_blanking command allows you to choose whether the HDMI output
+##     should be switched off when DPMS is triggered. This is to mimic the
+##     behaviour of other computers. After a specific amount of time, the
+##     display will become blank and go into low-power/standby mode due to
+##     receiving no signal.
+##
+##     NOTE: This feature may cause issues when using applications which don't
+##           use the framebuffer, such as omxplayer.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        HDMI Output will blank instead of being disabled
+##     1        HDMI Output will be disabled rather than just blanking
+##
+#hdmi_blanking=1
+
+## hdmi_drive
+##     chooses between HDMI and DVI modes
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     1        Normal DVI mode (No sound)
+##     2        Normal HDMI mode (Sound will be sent if supported and enabled)
+##
+#hdmi_drive=2
+
+## config_hdmi_boost
+##     configure the signal strength of the HDMI interface.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        (Default)
+##     1
+##     2
+##     3
+##     4        Try if you have interference issues with HDMI
+##     5
+##     6
+##     7        Maximum
+##
+#config_hdmi_boost=0
 
 ## hdmi_group
 ##     Defines the HDMI type
@@ -296,47 +336,262 @@
 ##
 #hdmi_mode=1
 
-## config_hdmi_boost
-##     configure the signal strength of the HDMI interface.
+## hdmi_force_mode
+##     Setting to 1 will remove all other modes except the ones specified by
+##     hdmi_mode and hdmi_group from the internal list, meaning they will not
+##     appear in any enumerated lists of modes. This option may help if a
+##     display seems to be ignoring the hdmi_mode and hdmi_group settings.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     0        (Default)
-##     1
-##     2
-##     3
-##     4        Try if you have interference issues with HDMI
-##     5
-##     6
-##     7        Maximum
+##     0        Disabled (Default)
+##     1        Enabled
 ##
-#config_hdmi_boost=0
+#hdmi_force_mode=1
 
-## hdmi_ignore_cec_init
-##     Doesn't sent initial active source message.  Avoids bringing
-##     (CEC enabled) TV out of standby and channel switch when rebooting.
+## edid_content_type
+##     Forces the edit content type to a specific value.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     0        Normal behaviour (Default)
-##     1        Doesn't sent initial active source message
+##     0        EDID_ContentType_NODATA, content type none.
+##     1        EDID_ContentType_Graphics, content type graphics, ITC must be
+##              set to 1
+##     2        EDID_ContentType_Photo, content type photo
+##     3        EDID_ContentType_Cinema, content type cinema
+##     4        EDID_ContentType_Game, content type game
 ##
-#hdmi_ignore_cec_init=1
-
-## hdmi_ignore_cec
-##     Pretends CEC is not supported at all by TV.
-##     No CEC functions will be supported.
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Normal behaviour (Default)
-##     1        Pretend CEC is not supported by TV
-##
-#hdmi_ignore_cec=1
+#edid_content_type=1
 
 ################################################################################
-##  Overscan Video Settings
+##  LCD Display/Touchscreen Options
 ################################################################################
+
+## ignore_lcd
+##     By default the Raspberry Pi LCD display is used when it is detected on
+##     the I2C bus. ignore_lcd=1 will skip this detection phase, and therefore
+##     the LCD display will not be used.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Detect LCD on I2C (Default)
+##     1        Skip LCD detection
+##
+#ignore_lcd=1
+
+## display_default_lcd
+##     If a Raspberry Pi DSI LCD is detected it will be used as the default
+##     display and will show the framebuffer. Setting display_default_lcd=0
+##     will ensure the LCD is not the default display, which usually implies
+##     the HDMI output will be the default. The LCD can still be used by
+##     choosing its display number from supported applications, for example,
+##     omxplayer.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        LCD will not be used as default display
+##     1        LCD will be used as default display (Default)
+##
+#display_default_lcd=0
+
+## lcd_framerate
+##     Specify the framerate of the Raspberry Pi LCD display, in Hertz/fps.
+##     Defaults to 60Hz.
+##
+#lcd_framerate=60
+
+## lcd_rotate
+##     This flips the display using the LCD's inbuilt flip functionality, which
+##     is a cheaper operation that using the GPU-based rotate operation.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        0 degrees rotation (Default)
+##     1        90 degrees rotation
+##     2        180 degrees rotation
+##     3        270 degrees rotation
+##
+#lcd_rotate=0
+
+## disable_touchscreen
+##     Enable/disable the touchscreen.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Enable touchscreen (Default)
+##     1        Disable touchscreen
+##
+#disable_touchscreen=0
+
+## enable_dpi_lcd
+##     Enable LCD displays attached to the DPI GPIOs. This is to allow the use
+##     of third-party LCD displays using the parallel display interface.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disabled (Default)
+##     1        Enabled
+##
+#enable_dpi_lcd=0
+
+## dpi_group
+##     Defines the DPI type
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Use the preferred group reported by the edid (Default)
+##     1        CEA
+##     2        DMT
+##
+#dpi_group=1
+
+## dpi_mode
+##     defines screen resolution in CEA or DMT format
+##
+##     H means 16:9 variant (of a normally 4:3 mode).
+##     2x means pixel doubled (i.e. higher clock rate, with each pixel repeated
+##                                  twice)
+##     4x means pixel quadrupled (i.e. higher clock rate, with each pixel
+##                                     repeated four times)
+##     reduced blanking means fewer bytes are used for blanking within the data
+##                      stream (i.e. lower clock rate, with fewer wasted bytes)
+##
+##     Value    hdmi_group=CEA                  hdmi_group=DMT
+##     -------------------------------------------------------------------------
+##     1        VGA                             640x350   85Hz
+##     2        480p  60Hz                      640x400   85Hz
+##     3        480p  60Hz  H                   720x400   85Hz
+##     4        720p  60Hz                      640x480   60Hz
+##     5        1080i 60Hz                      640x480   72Hz
+##     6        480i  60Hz                      640x480   75Hz
+##     7        480i  60Hz  H                   640x480   85Hz
+##     8        240p  60Hz                      800x600   56Hz
+##     9        240p  60Hz  H                   800x600   60Hz
+##     10       480i  60Hz  4x                  800x600   72Hz
+##     11       480i  60Hz  4x H                800x600   75Hz
+##     12       240p  60Hz  4x                  800x600   85Hz
+##     13       240p  60Hz  4x H                800x600   120Hz
+##     14       480p  60Hz  2x                  848x480   60Hz
+##     15       480p  60Hz  2x H                1024x768  43Hz  DO NOT USE
+##     16       1080p 60Hz                      1024x768  60Hz
+##     17       576p  50Hz                      1024x768  70Hz
+##     18       576p  50Hz  H                   1024x768  75Hz
+##     19       720p  50Hz                      1024x768  85Hz
+##     20       1080i 50Hz                      1024x768  120Hz
+##     21       576i  50Hz                      1152x864  75Hz
+##     22       576i  50Hz  H                   1280x768        reduced blanking
+##     23       288p  50Hz                      1280x768  60Hz
+##     24       288p  50Hz  H                   1280x768  75Hz
+##     25       576i  50Hz  4x                  1280x768  85Hz
+##     26       576i  50Hz  4x H                1280x768  120Hz reduced blanking
+##     27       288p  50Hz  4x                  1280x800        reduced blanking
+##     28       288p  50Hz  4x H                1280x800  60Hz
+##     29       576p  50Hz  2x                  1280x800  75Hz
+##     30       576p  50Hz  2x H                1280x800  85Hz
+##     31       1080p 50Hz                      1280x800  120Hz reduced blanking
+##     32       1080p 24Hz                      1280x960  60Hz
+##     33       1080p 25Hz                      1280x960  85Hz
+##     34       1080p 30Hz                      1280x960  120Hz reduced blanking
+##     35       480p  60Hz  4x                  1280x1024 60Hz
+##     36       480p  60Hz  4x H                1280x1024 75Hz
+##     37       576p  50Hz  4x                  1280x1024 85Hz
+##     38       576p  50Hz  4x H                1280x1024 120Hz reduced blanking
+##     39       1080i 50Hz  reduced blanking    1360x768  60Hz
+##     40       1080i 100Hz                     1360x768  120Hz reduced blanking
+##     41       720p  100Hz                     1400x1050       reduced blanking
+##     42       576p  100Hz                     1400x1050 60Hz
+##     43       576p  100Hz H                   1400x1050 75Hz
+##     44       576i  100Hz                     1400x1050 85Hz
+##     45       576i  100Hz H                   1400x1050 120Hz reduced blanking
+##     46       1080i 120Hz                     1440x900        reduced blanking
+##     47       720p  120Hz                     1440x900  60Hz
+##     48       480p  120Hz                     1440x900  75Hz
+##     49       480p  120Hz H                   1440x900  85Hz
+##     50       480i  120Hz                     1440x900  120Hz reduced blanking
+##     51       480i  120Hz H                   1600x1200 60Hz
+##     52       576p  200Hz                     1600x1200 65Hz
+##     53       576p  200Hz H                   1600x1200 70Hz
+##     54       576i  200Hz                     1600x1200 75Hz
+##     55       576i  200Hz H                   1600x1200 85Hz
+##     56       480p  240Hz                     1600x1200 120Hz reduced blanking
+##     57       480p  240Hz H                   1680x1050       reduced blanking
+##     58       480i  240Hz                     1680x1050 60Hz
+##     59       480i  240Hz H                   1680x1050 75Hz
+##     60                                       1680x1050 85Hz
+##     61                                       1680x1050 120Hz reduced blanking
+##     62                                       1792x1344 60Hz
+##     63                                       1792x1344 75Hz
+##     64                                       1792x1344 120Hz reduced blanking
+##     65                                       1856x1392 60Hz
+##     66                                       1856x1392 75Hz
+##     67                                       1856x1392 120Hz reduced blanking
+##     68                                       1920x1200       reduced blanking
+##     69                                       1920x1200 60Hz
+##     70                                       1920x1200 75Hz
+##     71                                       1920x1200 85Hz
+##     72                                       1920x1200 120Hz reduced blanking
+##     73                                       1920x1440 60Hz
+##     74                                       1920x1440 75Hz
+##     75                                       1920x1440 120Hz reduced blanking
+##     76                                       2560x1600       reduced blanking
+##     77                                       2560x1600 60Hz
+##     78                                       2560x1600 75Hz
+##     79                                       2560x1600 85Hz
+##     80                                       2560x1600 120Hz reduced blanking
+##     81                                       1366x768  60Hz
+##     82                                       1080p     60Hz
+##     83                                       1600x900        reduced blanking
+##     84                                       2048x1152       reduced blanking
+##     85                                       720p      60Hz
+##     86                                       1366x768        reduced blanking
+##
+#dpi_mode=1
+
+## dpi_output_format
+##     dpi_output_format is a bitmask specifying various parameters used to set
+##     up the display format.
+##
+##     More details on using the DPI modes and the output format can be found
+##     here:
+##     https://www.raspberrypi.org/documentation/hardware/raspberrypi/dpi/README.md
+##
+#dpi_output_format=0x6f005
+
+################################################################################
+##  Generic Display Options
+################################################################################
+
+## hdmi_force_hotplug
+##     Pretends HDMI hotplug signal is asserted so it appears a HDMI display
+##     is attached
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disabled (Default)
+##     1        Use HDMI mode even if no HDMI monitor is detected
+##
+#hdmi_force_hotplug=1
+
+## hdmi_ignore_hotplug
+##     Pretends HDMI hotplug signal is not asserted so it appears a HDMI
+##     display is not attached
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disabled (Default)
+##     1        Use composite mode even if HDMI monitor is detected
+##
+#hdmi_ignore_hotplug=1
+
+## disable_overscan
+##     Set to 1 to disable overscan
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Overscan Enabled (Default)
+##     1        Overscan Disabled
+##
+#disable_overscan=1
 
 ## overscan_left
 ##     Number of pixels to skip on left
@@ -358,25 +613,34 @@
 ##
 #overscan_bottom=0
 
-## disable_overscan
-##     Set to 1 to disable overscan
+## overscan_scale
+##     Set overscan_scale to 1 to force any non-framebuffer layers to conform
+##     to the overscan settings.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
-##     0        Overscan Enabled (Default)
-##     1        Overscan Disabled
+##     0        Disabled (Default)
+##     1        Force overscan scale
 ##
-#disable_overscan=1
-
-################################################################################
-##  Framebuffer Video Settings
-################################################################################
+#overscan_scale=0
 
 ## framebuffer_width
 ##     Console framebuffer width in pixels. Default is display width minus
 ##     overscan.
 ##
 #framebuffer_width=0
+
+## max_framebuffer_height
+##     Specifies the maximum height that the internal frame buffer is
+##     allowed to be
+##
+#max_framebuffer_height=0
+
+## max_framebuffer_width
+##     Specifies the maximum width that the internal frame buffer is
+##     allowed to be
+##
+#max_framebuffer_width=0
 
 ## framebuffer_height
 ##     Console framebuffer height in pixels. Default is display height minus
@@ -407,14 +671,52 @@
 ##
 #framebuffer_ignore_alpha=0
 
-################################################################################
-##  General Video Settings
-################################################################################
+## test_mode
+##     Enable test sound/image during boot for manufacturing test.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disable Test Mod (Default)
+##     1        Enable Test Mode
+##
+#test_mode=0
+
+## display_hdmi_rotate
+##     Use display_hdmi_rotate to rotate or flip the HDMI display orientation.
+##     The default value is 0.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        0 degrees (Default)
+##     1        90 degrees
+##     2        180 degrees
+##     3        270 degrees
+##     0x10000  Horizontal flip
+##     0x20000  Vertical flip
+##
+#display_hdmi_rotate=0
+
+## display_lcd_rotate
+##     Use display_lcd_rotate to rotate or flip the LCD display orientation.
+##     The default value is 0.
+##
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        0 degrees (Default)
+##     1        90 degrees
+##     2        180 degrees
+##     3        270 degrees
+##     0x10000  Horizontal flip
+##     0x20000  Vertical flip
+##
+#display_lcd_rotate=0
 
 ## display_rotate
-##     Rotate the display clockwise or flip the display.
-##     The 90 and 270 degrees rotation options require additional memory on GPU,
-##     so won't work with the 16M GPU split.
+##     display_rotate is deprecated in the latest firmware but has been retained
+##     for backwards compatibility. Please use display_lcd_rotate and
+##     display_hdmi_rotate instead.
+##
+##     Use display_rotate to rotate or flip the screen orientation.
 ##
 ##     Value    Description
 ##     -------------------------------------------------------------------------
@@ -458,16 +760,6 @@
 ##  Camera Settings
 ################################################################################
 
-## start_x
-##     Set to "1" to enable the camera module.
-##
-##     Enabling the camera requires gpu_mem option to be specified with a value
-##     of at least 128.
-##
-##     Default 0
-##
-#start_x=0
-
 ## disable_camera_led
 ##     Turn off the red camera led when recording video or taking a still
 ##     picture.
@@ -480,33 +772,8 @@
 #disable_camera_led=1
 
 ################################################################################
-##  Test Settings
-################################################################################
-
-## test_mode
-##     Enable test sound/image during boot for manufacturing test.
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Disable Test Mod (Default)
-##     1        Enable Test Mode
-##
-#test_mode=0
-
-################################################################################
 ##  Memory Settings
 ################################################################################
-
-## disable_l2cache
-##     Disable arm access to GPU's L2 cache. Needs corresponding L2 disabled
-##     kernel.
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Enable L2 Cache (Default)
-##     1        Disable L2 cache
-##
-#disable_l2cache=0
 
 ## gpu_mem
 ##     GPU memory allocation in MB for all board revisions.
@@ -533,33 +800,55 @@
 ##
 #gpu_mem_1024=944
 
-## disable_pvt
-##     Disable adjusting the refresh rate of RAM every 500ms
-##     (measuring RAM temparature).
+## disable_l2cache
+##     Disable arm access to GPU's L2 cache. Needs corresponding L2 disabled
+##     kernel.
 ##
-#disable_pvt=1
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Enable L2 Cache (Default)
+##     1        Disable L2 cache
+##
+#disable_l2cache=0
+
 
 ################################################################################
-##  CMA - Dynamic Memory Split
-##
-##  CMA enables dynamic management of the ARM and GPU memory split at runtime.
-##
-##  The following options need to be in cmdline.txt for CMA to work:
-##    coherent_pool=6M smsc95xx.turbo_mode=N
-##
+##  Onboard Analogue Audio Options
 ################################################################################
 
-## cma_lwm
-##     When GPU has less than cma_lwm (low water mark) memory available it
-##     will request some from ARM.
+## disable_audio_dither
+##     By default, a 1.0LSB dither is applied to the audio stream if it is
+##     routed to the analogue audio output. This can create audible background
+##     "hiss" in some situations, for example when the ALSA volume is set to a
+##     low level. Set disable_audio_dither to 1 to disable dither application.
 ##
-#cma_lwm=16
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Enable dither (Default)
+##     1        Disable dither
+##
+#disable_audio_dither=0
 
-## cma_hwm
-##     When GPU has more than cma_hwm (high water mark) memory available it
-##     will release some to ARM.
+## enable_audio_dither
+##     Audio dither (see disable_audio_dither above) is normally disabled when
+##     the audio samples are larger than 16 bits. Set this option to 1 to force
+##     the use of dithering for all bit depths.
 ##
-#cma_hwm=32
+##     Value    Description
+##     -------------------------------------------------------------------------
+##     0        Disable dither (Default)
+##     1        Enable dither
+##
+#enable_audio_dither=0
+
+## pwm_sample_bits
+##     The pwm_sample_bits command adjusts the bit depth of the analogue audio
+##     output. The default bit depth is 11. Selecting bit depths below 8 will
+##     result in nonfunctional audio, as settings below 8 result in a PLL
+##     frequency too low to support. This is generally only useful as a
+##     demonstration of how bit depth affects quantisation noise.
+##
+#pwm_sample_bits=11
 
 ################################################################################
 ##  Boot Option Settings
@@ -634,13 +923,6 @@
 ##
 #init_uart_clock=3000000
 
-## init_emmc_clock
-##     Initial emmc clock, increasing this can speedup your SD-card.
-##
-##     Default 100000000 (100mhz)
-##
-#init_emmc_clock=100000000
-
 ## boot_delay
 ##     Wait for a given number of seconds in start.elf before loading
 ##     kernel.img.
@@ -660,18 +942,6 @@
 ##     Default 0
 ##
 #boot_delay_ms=0
-
-## avoid_safe_mode
-##     Adding a jumper between pins 5 & 6 of P1 enables a recovery Safe Mode.
-##     If pins 5 & 6 are used for connecting to external devices (e.g. GPIO),
-##     then this setting can be used to ensure Safe Mode is not triggered.
-##
-##     Value    Description
-##     -------------------------------------------------------------------------
-##     0        Respect Safe Mode input (Default)
-##     1        Ignore Safe Mode input
-##
-#avoid_safe_mode=1
 
 ## disable_splash
 ##     Avoids the rainbow splash screen on boot.
