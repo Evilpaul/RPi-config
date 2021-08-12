@@ -1455,3 +1455,16 @@
 ##     Default 35.
 ##
 #dtparam=pwr_led_gpio=35
+
+################################################################################
+##  Base Device Tree Overlays
+################################################################################
+
+## gernal information
+##
+##     The dtoverlay option allow loading of optional drivers
+##     format:  dtoverlay=<name>[,<param>=<val>]
+##
+##     Information can be found in overlays/README
+##
+#dtoverlay=act-led,activelow=off
