@@ -1,7 +1,7 @@
 ################################################################################
 ##  Raspberry Pi Configuration Settings
 ##
-##  Revision 17, 2021/08/15
+##  Revision 18, 2023/11/20
 ##
 ##  Details taken from the eLinux wiki and official Raspberry Pi documentation.
 ##  For up-to-date information please refer to links below.
@@ -759,6 +759,16 @@
 ################################################################################
 ##  Camera Settings
 ################################################################################
+
+## start_x
+##     Set to "1" to enable the camera module.
+##
+##     Enabling the camera requires gpu_mem option to be specified with a value
+##     of at least 128.
+##
+##     Default 0
+##
+#start_x=0
 
 ## disable_camera_led
 ##     Turn off the red camera led when recording video or taking a still
